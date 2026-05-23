@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-slate-700 antialiased bg-white;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold text-slate-900;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Professional buttons - subtle, refined */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-primary-700 text-white font-semibold rounded-md shadow-soft hover:bg-primary-800 hover:shadow-card transition-all duration-200 text-sm tracking-wide;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-white text-primary-700 font-semibold rounded-md border border-slate-200 hover:border-primary-300 hover:bg-primary-50/50 transition-all duration-200 text-sm tracking-wide;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-white/40 text-white font-semibold rounded-md hover:bg-white hover:text-primary-800 transition-all duration-200 text-sm tracking-wide;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-accent-500 text-white font-semibold rounded-md shadow-soft hover:bg-accent-600 transition-all duration-200 text-sm tracking-wide;
+  }
+
+  /* Section eyebrow + title */
+  .section-eyebrow {
+    @apply inline-flex items-center gap-2 text-primary-700 font-semibold uppercase tracking-[0.18em] text-xs mb-4;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    @apply inline-block w-8 h-px bg-primary-300;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-900 mb-4 leading-[1.15] tracking-tightest;
+  }
+
+  .section-subtitle {
+    @apply text-primary-700 font-semibold uppercase tracking-[0.18em] text-xs mb-3;
+  }
+
+  .section-lede {
+    @apply text-slate-600 text-base md:text-lg max-w-2xl leading-relaxed;
+  }
+
+  .gradient-text {
+    @apply text-primary-700;
+  }
+
+  /* Card with subtle border-first design */
+  .card-pro {
+    @apply bg-white border border-slate-200/80 rounded-xl transition-all duration-300;
+  }
+
+  .card-pro-hover {
+    @apply card-pro hover:border-primary-200 hover:shadow-card hover:-translate-y-0.5;
+  }
+
+  /* Input fields */
+  .input-pro {
+    @apply w-full px-4 py-2.5 bg-white border border-slate-200 rounded-md text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100 transition-all;
+  }
+
+  .label-pro {
+    @apply block text-sm font-medium text-slate-700 mb-1.5;
+  }
+
+  /* Subtle dotted divider for content sections */
+  .divider-dot {
+    @apply flex items-center gap-2 text-slate-300;
+  }
+  .divider-dot::before,
+  .divider-dot::after {
+    content: '';
+    @apply flex-1 h-px bg-slate-200;
+  }
+}
+
+/* Scrollbar - more subtle */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 5px;
+  border: 2px solid #f8fafc;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Hero - deep navy with subtle texture */
+.hero-bg {
+  background:
+    linear-gradient(180deg, rgba(12, 22, 43, 0) 0%, rgba(12, 22, 43, 0.4) 100%),
+    linear-gradient(135deg, #0c162b 0%, #152340 50%, #1f3257 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 18% 28%, rgba(94, 130, 189, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 82% 72%, rgba(217, 154, 79, 0.10) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  pointer-events: none;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+/* Subtle hover lift for cards */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-card hover:-translate-y-0.5;
+}
+
+/* Number-style accent for counters / stats */
+.stat-number {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-feature-settings: 'tnum';
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}

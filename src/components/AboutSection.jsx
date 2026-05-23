@@ -1,0 +1,105 @@
+import { Link } from 'react-router-dom';
+import { Check, ArrowRight } from 'lucide-react';
+
+const AboutSection = () => {
+  const points = [
+    'Experienced team of 50+ professionals',
+    'Customized solutions for every business',
+    'Affordable, transparent pricing',
+    'Dedicated 24/7 customer support',
+    'Proven track record across industries',
+    'Long-term technology partnerships',
+  ];
+
+  return (
+    <section className="py-24 bg-white" id="about">
+      <div className="container-custom">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Image side */}
+          <div className="relative">
+            <div className="grid grid-cols-2 gap-3">
+              <div className="space-y-3">
+                <div className="rounded-xl overflow-hidden shadow-card border border-slate-100">
+                  <img
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600"
+                    alt="Team collaboration"
+                    className="w-full h-44 object-cover"
+                  />
+                </div>
+                <div className="rounded-xl overflow-hidden shadow-card border border-slate-100">
+                  <img
+                    src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600"
+                    alt="Office workspace"
+                    className="w-full h-32 object-cover"
+                  />
+                </div>
+              </div>
+              <div className="space-y-3 pt-8">
+                <div className="rounded-xl overflow-hidden shadow-card border border-slate-100">
+                  <img
+                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600"
+                    alt="Client meeting"
+                    className="w-full h-32 object-cover"
+                  />
+                </div>
+                <div className="rounded-xl overflow-hidden shadow-card border border-slate-100">
+                  <img
+                    src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600"
+                    alt="Working together"
+                    className="w-full h-44 object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Stats badge */}
+            <div className="absolute -bottom-4 -right-4 bg-primary-900 text-white rounded-xl p-5 shadow-elevated hidden md:block">
+              <p className="stat-number text-3xl">5+</p>
+              <p className="text-[11px] uppercase tracking-[0.18em] text-primary-200 mt-1">
+                Years of Experience
+              </p>
+            </div>
+          </div>
+
+          {/* Content side */}
+          <div>
+            <p className="section-eyebrow">About Maurisys</p>
+            <h2 className="section-title">
+              Your Trusted{' '}
+              <span className="font-serif italic font-medium text-primary-700">
+                Technology Partner
+              </span>
+            </h2>
+            <p className="text-slate-600 mb-5 leading-relaxed text-[15px]">
+              Maurisys Solution is a full-service IT company helping businesses unlock growth
+              through technology. From startups to large enterprises, we partner with
+              organizations of all sizes to deliver digital solutions that scale.
+            </p>
+            <p className="text-slate-600 mb-7 leading-relaxed text-[15px]">
+              Our mission is straightforward: turn your ideas into impactful digital products.
+              We combine deep technical expertise with strategic thinking to build websites,
+              apps, and platforms your customers will love.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 mb-9">
+              {points.map((point, idx) => (
+                <div key={idx} className="flex items-start gap-2.5">
+                  <div className="w-5 h-5 mt-0.5 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-3 h-3 text-primary-700" strokeWidth={3} />
+                  </div>
+                  <span className="text-slate-700 text-sm">{point}</span>
+                </div>
+              ))}
+            </div>
+
+            <Link to="/about" className="btn-primary">
+              Learn More <ArrowRight size={16} className="ml-2" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;
