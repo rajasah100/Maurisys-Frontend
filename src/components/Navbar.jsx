@@ -63,10 +63,10 @@ const Navbar = () => {
     >
       <div className="container-custom flex items-center justify-between">
         <Link to="/" className="flex items-center gap-1 group">
-          <div className="">
-            {/* <Code2 className="w-5 h-5 text-white" strokeWidth={2.2} /> */}
+          {/* <div className="">
+            <Code2 className="w-5 h-5 text-white" strokeWidth={2.2} />
             <img className='w-12' src={logo} />
-          </div>
+          </div> */}
           {/* <span className="font-display text-xl font-bold text-slate-900 tracking-tight">
             Maurisys
             <span className="text-primary-700 font-medium"> Solution</span>

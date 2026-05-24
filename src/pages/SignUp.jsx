@@ -60,9 +60,9 @@ const SignUp = () => {
       <div className="flex-1 flex items-center justify-center p-6 lg:p-10 bg-white">
         <div className="w-full max-w-md">
           <Link to="/" className="flex items-center gap-1 mb-10">
-            <div>
+            {/* <div>
               <img className='w-14' src={logo} />
-            </div>
+            </div> */}
             <img className='w-40' src={maurisysLogo} alt="Logo" />
           </Link>
 

@@ -48,7 +48,7 @@ const AdminLayout = () => {
           <Link to="/admin" className="flex items-center gap-2.5">
             <div>
               {/* <Code2 className="w-5 h-5 text-white" strokeWidth={2.2} /> */}
-              <img className='w-12' src={logo} />
+              {/* <img className='w-12' src={logo} /> */}
             </div>
             <div>
               <img className='w-40' src={maurisysLogo} alt="Logo" />
